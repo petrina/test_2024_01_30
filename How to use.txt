@@ -1,0 +1,64 @@
+--------------------------------------
+[post] /api/posts
+(create posts)
+
+{
+  "translations": [
+    {
+      "language": "en",
+      "title": "en Title",
+      "description": "en Description",
+      "content": "en Content"
+    },
+    {
+      "language": "ru",
+      "title": "ru Title",
+      "description": "ru Description",
+      "content": "ru Content"
+    },
+    {
+      "language": "ua",
+      "title": "ua Title",
+      "description": "ua Description",
+      "content": "ua Content"
+    }
+  ],
+  "tag": "Your Tag"
+}
+--------------------------------------
+[get] /api/posts?lang=ua/en/ru
+(show all posts + lang)
+--------------------------------------
+[get] /api/posts/{id}?lang=ua/en/ru
+(show {id} post + lang)
+--------------------------------------
+[put] api/posts/{id}
+(update {id} title + description + content)
+
+{
+"translations": [
+{
+"language_id": "{id}",
+"title": "New Title",
+"description": "New Desc",
+"content": "New Content"
+}
+]
+}
+--------------------------------------
+[path] /posts/{id}/update-tag
+(update tag to {id} post)
+
+{
+"tag": "New Tag"
+}
+--------------------------------------
+[post] api/posts/search
+(search)
+
+{
+"lang": "ua/ru/en",
+"search": ""
+}
+
+
